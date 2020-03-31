@@ -1,0 +1,14 @@
+.employees {
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .employees {
+        width: 95%;
+    }
+    .list_item_hire {
+        text-align: right !important;
+    }
+}

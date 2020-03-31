@@ -1,0 +1,206 @@
+.postEmployee {
+    height: 100%;
+    width: 95%;
+    margin: 0 auto;
+
+    .lists {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-column-gap: 30px;
+        width: 100%;
+
+        .mobile-list {
+            display: none;
+        }
+    }
+
+    .salaries, .titles, .departments {
+        width: 320px;
+        display: inline-flex;
+        >.list {
+            width: -webkit-fill-available;
+        }
+
+        .line {
+            border-bottom: var(--main-third-color) 1px solid;
+        }
+        .salaryItem, .titleItem, .deptItem {
+            @extend .line;
+            width: 100%;
+            display: inline-grid;
+            grid-template-columns: 50% 50%;
+            padding-top: 10px;         
+            cursor: default;
+            >div {
+                text-align: left;
+                color: var(--main-text-color);        
+            }
+            
+            &:not(.edit) {
+                &:hover {
+                    border-color: var(--main-style-color);
+                    background-color: var(--main-second-color);
+                    cursor: pointer;
+                }
+            }
+                    
+            &.edit {
+                padding-bottom: 10px;
+                grid-column-gap: 10px;
+                grid-row-gap: 10px;
+                grid-template-columns: 80px 1fr;
+
+                .main-theam-bth {
+                    border: 1px solid var(--main-style-color);
+                    border-radius: 5px;
+            
+                    &:hover {
+                        color: var(--main-style-color);
+                    }
+                }
+        
+                .new-btn {
+                    margin-top: 5px;
+                    grid-column: 1 / span 2;
+                }
+        
+                .update-btn-group {
+                    display: inline-grid;
+                    grid-column-gap: 10px;
+                    grid-template-columns: 1fr 1fr;
+                    grid-column: 1 / span 2;
+                }
+            }
+
+            .title {
+                color: var(--main-style-color);
+            }
+        }
+    }
+    
+    .main-modify-form{
+        float: left;
+        max-width: 40%;
+
+        input {
+            width: 100%;
+        }
+
+        .gender {
+            width: 100%;
+        }
+        .gender-holder {
+            margin-left: 20px;
+        }
+        .gender-type-label {
+            margin-left: 15px;
+            margin-right: 5px;
+        }
+        
+    }
+    .form-group {
+        margin-bottom: 0px;
+        input {
+            width: 10px !important;
+            margin-bottom: 0px;
+        }
+    }
+    .salary-chart {
+        display: inline-block;
+        max-width: 40%;
+        max-height: 40%;
+        margin-right: 15px;
+        margin-left: 10px;
+
+        canvas {
+            height: 350px !important;
+            width: 700px !important;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1420px) {
+    .postEmployee {
+        .lists {
+            grid-template-columns: 200px 1fr;
+            >div:not(.active):not(.mobile-list) {
+                display: none;
+            }
+            .mobile-list {
+                display: block;
+                .main-theam-bth {
+                    width: 100%;
+                    margin-bottom: 5px;
+                    border: 1px solid var(--main-style-color);
+                    border-radius: 5px;
+            
+                    &:hover {
+                        color: var(--main-style-color);
+                    }
+                }
+            }
+        }
+        .form-group {
+            margin-bottom: 0px;
+            input {
+                width: 10px !important;
+
+            margin-bottom: 0px;
+            }
+        }
+    }    
+}
+
+/*@media only screen and (max-width: 800px) {
+    .salary-chart {
+        canvas {
+            display: none !important;
+        }
+        .postEmployee .main-modify-form {
+            width: 100%; 
+        }
+    }
+}*/
+
+@media only screen and (max-width: 800px) {
+    .postEmployee {
+        .salary-chart {
+            canvas {
+                display: none !important;
+            }
+    
+        }
+        .main-modify-form {
+            width: 100%;
+            max-width: unset;
+        }
+        
+        .form-group {
+            margin-bottom: 0px;
+            input {
+                width: 10px !important;
+
+            margin-bottom: 0px;
+            }
+        }
+        .lists {
+            margin-top: unset; 
+            grid-template-columns: 100%;
+            .salaries, .titles, .departments {
+                width: 100%;
+            }
+            .list>h2 {
+                display: none;
+            }
+
+            .mobile-list {
+                .active {
+                    background: var(--main-style-color);
+                    color: #ffffff;
+                }
+            }
+        }
+    }    
+}

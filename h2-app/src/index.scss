@@ -1,0 +1,75 @@
+/* Variabler */
+
+:root {
+  --main-bg-color: #e5e7e6;
+  --main-txt-color: #232528; 
+  --main-style-color: #16bcb9;
+  --main-second-color: #c8c8c8;
+  --main-third-color: #b3b3b3;
+}
+
+/*--------------------------------*/
+
+html, body, #root, .App {
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+main {
+  height: calc(100% - 75px);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: 'Questrial', sans-serif; 
+  background-color: var(--main-bg-color);
+}
+
+h4 {
+  text-align: center;
+}
+
+.navbar {
+    border-radius: 0px;
+
+    .navbar-brand {
+      a {
+        text-decoration: none;
+        color: var(--main-style-color);
+      }
+    }
+}
+
+.navbar-inverse {
+  background-color: var(--main-txt-color);
+  border-color:var(--main-txt-color);
+  border-bottom: 4px solid;
+  border-bottom-color: var(--main-style-color);
+  color: var(--main-second-color);
+}
+
+.salary-chart canvas {
+  height: 300px;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .dashboard_grid {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 50% 50%;
+    position: relative;
+  }
+
+  .grid_item{
+    height: 300px;
+  } 
+}
+.btn btn-outline-primary {
+  font-size: 12px;
+}

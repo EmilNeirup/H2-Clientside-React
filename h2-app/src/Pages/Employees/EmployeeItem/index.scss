@@ -1,0 +1,32 @@
+.EmployeeItem {
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    border-bottom: var(--main-third-color) 1px solid;
+    padding-top: 10px;
+    cursor: default;
+    >div {
+        text-align: left;
+        color: var(--main-text-color);
+        
+    }
+
+    &:hover {
+        border-color: var(--main-style-color);
+        background-color: var(--main-second-color);
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .EmployeeItem {
+        grid-template-columns: 24.9% 24.9% 21.6% 6.6% 21.6%;
+
+        .list_item_id {
+            display:none;
+        }
+        .list_item_hire {
+            text-align: right;
+        }
+    }
+}
